@@ -16,8 +16,10 @@ import App from './components/App';
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Route path="/register" component={Register} />
-      <Route path="/app/:step" component={App} />
+      <div>
+        <Route path="/register" component={Register} />
+        <Route path="/app/:step" component={App} />
+      </div>
     </Router>
   </Provider>,
   document.getElementById('root')
