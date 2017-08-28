@@ -12,15 +12,20 @@ import {
 import store from './store';
 import Register from './components/Register';
 import App from './components/App';
+import Main from './Main';
+
+const RouterApp = () => (
+  <Router>
+    <Main>
+      <Route exact path="/" component={Register} />
+      <Route path="/app/:step" component={App} />
+    </Main>
+  </Router>
+)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <div>
-        <Route path="/" component={Register} />
-        <Route path="/app/:step" component={App} />
-      </div>
-    </Router>
+    <RouterApp/>
   </Provider>,
   document.getElementById('root')
 );
